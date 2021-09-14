@@ -1,0 +1,42 @@
+.breadcrumbs {
+    @include list-destroy;
+    display: flex;
+    // flex-wrap: wrap;
+    & li {
+        position: relative;
+        color: #757575;
+        padding-right: 15px;
+        font-size: 12px;
+        line-height: 12px;
+        &:not(:first-child) {
+            padding-left: 10px;
+        }
+        &:not(:last-child) {
+            &::before {
+                content: "/";
+                position: absolute;
+                right: 0;
+            }
+        }
+        & a {
+            text-decoration: none;
+            & span {
+                transition: $transition-speed;
+            }
+        }
+        & span {
+            font-weight: bold;
+            color: $color-black;
+        }
+        & a:hover span {
+            color: $color-red;
+        }
+    }
+}
+
+.inner .breadcrumbs {
+    padding-top: 25px;
+    @include tablets {
+        padding-top: 30px;
+    }
+}

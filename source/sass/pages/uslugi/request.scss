@@ -1,0 +1,89 @@
+.request {
+    @include list-destroy;
+    padding-bottom: 20px;
+    @include desktop {
+        max-width: 60%;
+    }
+    & ul {
+        @include list-destroy;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    &__item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        position: relative;
+        &::before {
+            content: "";
+            flex-shrink: 0;
+            // position: absolute;
+            width: 35px;
+            height: 35px;
+            margin-right: 17px;
+            left: 0;
+            background-image: url(../img/icon-item.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    h3 {
+        text-align: left;
+        font-weight: normal;
+        color: $color-red;
+    }
+}
+
+.request__obj {
+    display: none;
+    @include desktop {
+        display: block;
+        position: absolute;
+        right: 10%;
+        bottom: 0;
+        // bottom: -100px;
+    }
+}
+
+.request__head {
+    margin: 0;
+    @include desktop {
+        text-align: left;
+    }
+}
+
+.doc .request {
+    padding-bottom: 50px;
+    max-width: 100%;
+}
+
+.doc__list {
+    @include list-destroy;
+    & li {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        position: relative;
+        &::before {
+            content: "";
+            flex-shrink: 0;
+            // position: absolute;
+            width: 35px;
+            height: 35px;
+            margin-right: 17px;
+            left: 0;
+            background-image: url(../img/pdf.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}

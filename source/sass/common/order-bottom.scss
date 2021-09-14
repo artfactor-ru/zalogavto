@@ -1,0 +1,109 @@
+.order-bottom {
+    background: $color-red;
+    text-align: center;
+    color: #ffffff;
+    padding: 25px 0;
+    @include laptop {
+        padding: 35px 0;
+    }
+    & h2 {
+        margin-bottom: 15px;
+    }
+    &__form-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        @include tablets {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @include laptop {
+            padding-left: 17%;
+            padding-right: 17%;
+        }
+        @include desktop {
+            padding-left: 18%;
+            padding-right: 18%;
+        }
+    }
+    & .button {
+        // box-shadow: none;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        order: 4;
+        margin-top: 25px;
+        @include tablets {
+            order: 4;
+            margin-top: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            width: auto;
+        }
+        // @include laptop {
+        //     width: 28%;
+        // }
+        // @include desktop {
+        //     width: 25%;
+        //     margin-left: auto;
+        // }
+    }
+    & .input {
+        margin-bottom: 10px;
+        @include tablets {
+            margin-bottom: 12px;
+            width: 48%;
+        }
+        @include desktop {
+            margin-right: 15px;
+        }
+    }
+    & span {
+        margin-bottom: 10px;
+        @include tablets {
+            margin-bottom: 12px;
+            width: 48%;
+        }
+        @include desktop {
+            margin-right: 15px;
+        }
+        & .input {
+            width: 100%;
+        }
+    }
+    .ajax-loader {
+        display: none;
+    }
+    &__licenses {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 133.9%;
+        /* or 16px */
+        text-indent: 1px;
+        color: #FFFFFF;
+        @include tablets {
+            order: 3;
+            width: 100%;
+            margin-top: 12px;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+        @include laptop {
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+        & a {
+            text-decoration: underline;
+            &:hover {
+                color: $color-black;
+                // opacity: 0.5;
+            }
+        }
+    }
+}

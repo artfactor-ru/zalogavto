@@ -1,0 +1,114 @@
+.accordion {
+    @include list-destroy;
+}
+
+.accordion__item {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.accordion__title {
+    margin: 0;
+    cursor: pointer;
+    padding: 12px 10px 12px 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    // color: $color-light-blue;
+    transition: $transition-speed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #ECECEC;
+    border-radius: 15px;
+    z-index: 2;
+    @include tablets {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        padding: 15px 30px 15px 30px;
+    }
+}
+
+.accordion__info-wrap {
+    transform: translateY(-100%);
+    position: relative;
+    z-index: 1;
+    transition: $transition-speed;
+    opacity: 0;
+    padding: 10px 15px 20px 15px;
+    background: #ECECEC;
+    border-radius: 15px;
+    margin-top: 5px;
+    @include tablets {
+        padding: 25px 25px 25px 25px;
+    }
+    @include laptop {
+        padding: 30px 210px 35px 30px;
+    }
+}
+
+.accordion__info {
+    max-height: 0;
+    padding: 0;
+    transition: $transition-speed;
+}
+
+.accordion__item.active .accordion__info {}
+
+.accordion__item.active .accordion__info-wrap {
+    transform: translateY(0);
+    opacity: 1;
+    transition: $transition-speed;
+}
+
+.accordion__title svg {
+    pointer-events: none;
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.accordion__title svg circle {
+    fill: #ECECEC;
+    stroke: $color-black;
+    stroke-width: 2;
+    stroke-opacity: 1;
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 596.6;
+    // stroke-dashoffset: -596.6;
+    transition: 1s, stroke-dashoffset 3s, stroke-opacity 5s;
+}
+
+.accordion__item.active svg circle {
+    fill: #ECECEC;
+    stroke-dasharray: 596.6;
+    stroke-dashoffset: -596.6;
+    stroke-opacity: 0;
+}
+
+.accordion__title svg line {
+    transition: 1s, opacity 0.5s;
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    stroke: $color-black;
+}
+
+.accordion__item.active svg line {
+    transform: rotate(360deg);
+    stroke: $color-black;
+}
+
+.accordion__title svg line.y {
+    opacity: 1;
+}
+
+.accordion__item.active svg line.y {
+    opacity: 0;
+}
+
+.accordion__item:hover .accordion__title {
+    color: $color-red;
+}

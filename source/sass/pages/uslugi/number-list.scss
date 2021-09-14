@@ -1,0 +1,100 @@
+.number {
+    @include list-destroy;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    @include tablets {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    @include laptop {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        margin-top: 55px;
+        justify-content: space-between;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        @include tablets {
+            width: 40%;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        @include laptop {
+            width: 20%;
+            margin: 0;
+            align-items: flex-start;
+        }
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 35px;
+        @include tablets {
+            margin-bottom: 77px;
+        }
+        @include laptop {
+            margin: 0;
+        }
+    }
+    &__item:nth-child(3) {
+        @include tablets {
+            margin-bottom: 0;
+        }
+        @include laptop {
+            margin: 0;
+        }
+    }
+    &__num {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 66.6px;
+        line-height: 57px;
+        /* identical to box height, or 86% */
+        color: $color-red;
+        @include laptop {
+            margin-bottom: 30px;
+        }
+    }
+    &__title {
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    &__desc {
+        // margin: 0 auto;
+        text-align: center !important;
+        @include tablets {
+            text-align: left !important;
+            width: 90%;
+        }
+    }
+}
+
+.number--about {
+    align-items: flex-start;
+    & .number__item {
+        width: 100%;
+        @include tablets {
+            width: 25%;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-bottom: 0;
+        }
+        @include laptop {
+            width: 20%;
+            margin: 0;
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
+    }
+}

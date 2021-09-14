@@ -1,0 +1,92 @@
+.news__detail {
+    @include p-style;
+    padding-bottom: 60px;
+    @include laptop {
+        padding-bottom: 85px;
+    }
+    @include desktop {
+        padding-bottom: 90px;
+    }
+    & .news {
+        &__img-wrap {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            height: 135px;
+            & img {
+                border-radius: 15px;
+            }
+            @include tablets {
+                height: 260px;
+                margin-top: 50px;
+            }
+            @include laptop {
+                height: 365px;
+            }
+            @include desktop {
+                height: 450px;
+            }
+        }
+        &__date {
+            background: #fff;
+        }
+    }
+    & p {
+        margin-bottom: 20px;
+    }
+    & h2 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        @include tablets {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        @include desktop {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    }
+    & h3 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        @include tablets {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        @include desktop {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    }
+    & ul {
+        @include list-destroy;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        & li {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            text-align: left;
+            align-items: center;
+            position: relative;
+            &::before {
+                content: "";
+                flex-shrink: 0;
+                // position: absolute;
+                width: 35px;
+                height: 35px;
+                margin-right: 17px;
+                left: 0;
+                background-image: url(../img/icon-item.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+        & li:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+}

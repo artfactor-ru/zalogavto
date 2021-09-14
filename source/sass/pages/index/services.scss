@@ -1,0 +1,116 @@
+.services {
+    margin-top: 42px;
+    &__list {
+        @include list-destroy;
+        display: flex;
+        flex-direction: column;
+        @include tablets {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__img-wrap {
+        position: relative;
+        flex-shrink: 0;
+        width: 175px;
+        & img {
+            position: relative;
+            z-index: 5;
+        }
+        @include laptop {
+            width: 245px;
+        }
+    }
+    &__img-wrap::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        background: $color-dark-grey;
+        border-radius: 37px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        width: 60%;
+        @include laptop {
+            width: 65%;
+        }
+    }
+    &__item {
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: center;
+        @include tablets {
+            width: 48%;
+            justify-content: flex-start;
+        }
+        @include laptop {
+            margin-bottom: 40px;
+        }
+    }
+    &__desc-wrap {
+        margin-left: -30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        @include laptop {
+            margin-left: -30px;
+            padding-top: 25px;
+            padding-bottom: 40px;
+            flex-grow: 1;
+        }
+        @include desktop {
+            margin-left: 0px
+        }
+    }
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        @include laptop {
+            & br {
+                display: none;
+            }
+            & br:last-child {
+                display: block;
+            }
+        }
+    }
+    &__number {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 66px;
+        line-height: 66px;
+        color: $color-red;
+    }
+    &__desc {
+        margin: 0;
+        padding: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        text-transform: uppercase;
+    }
+    &__percent {
+        font-size: 30px;
+    }
+    & .red {
+        color: $color-red;
+    }
+    & a {
+        text-transform: normal;
+        white-space: nowrap;
+        padding-left: 25px;
+        padding-right: 25px;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 253px;
+    }
+}

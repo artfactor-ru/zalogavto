@@ -1,0 +1,54 @@
+.review {
+    margin-top: 35px;
+    margin-bottom: 55px;
+    @include tablets {
+        margin-top: 50px;
+        margin-bottom: 65px;
+    }
+    @include desktop {
+        margin-top: 60px;
+        margin-bottom: 75px;
+    }
+    &__title {
+        margin: 0;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    &__footer {
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include tablets {
+            margin-bottom: 30px;
+        }
+    }
+    &__date {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        text-transform: uppercase;
+        color: #9D9D9D;
+    }
+}
+
+.swiper-container--review .swiper-button-next {
+    right: 15%;
+    left: auto;
+    @include tablets {
+        right: 30%;
+    }
+}
+
+.swiper-container--review .swiper-button-prev {
+    left: 15%;
+    @include tablets {
+        left: 30%;
+    }
+}

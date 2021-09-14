@@ -1,0 +1,56 @@
+.news-inner {
+    @include list-destroy;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    & .news {
+        &__item {
+            width: 100%;
+            margin-bottom: 25px;
+            flex-direction: column;
+            @include tablets {
+                width: 49%;
+                margin-bottom: 30px;
+            }
+            @include laptop {
+                width: 49%;
+                margin-bottom: 40px;
+            }
+        }
+        &__img-wrap {
+            height: 220px;
+            margin-right: 0;
+            width: 100%;
+            & img {
+                border-radius: 15px;
+            }
+            @include laptop {
+                height: 290px;
+            }
+        }
+        &__link {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            & svg {
+                margin-left: 20px;
+                transition: $transition-speed;
+            }
+            @include laptop {
+                font-size: 18px;
+                line-height: 20px;
+            }
+            &:hover svg {
+                fill: $color-red;
+                transform: translateX(20px);
+            }
+        }
+    }
+}

@@ -1,0 +1,142 @@
+// Список ссылок
+.hero__links {
+    position: relative;
+    background: $color-light-grey;
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    @include laptop {
+        padding-left: 35px;
+    }
+    @include desktop {
+        padding-left: 0;
+    }
+}
+
+.inner .hero__links {
+    background: $color-black;
+}
+
+.hero__wrap .hero__links {
+    bottom: 0;
+    z-index: 10000;
+    position: absolute;
+}
+
+.hero__links-list {
+    @include list-destroy;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    @include desktop {
+        max-width: 1250px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+}
+
+.hero__links-item {
+    width: auto;
+    flex-shrink: 0;
+    position: relative;
+    padding: 15px 10px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    transition: $transition-speed;
+    & svg {
+        transition: $transition-speed;
+    }
+    & svg path {
+        transition: $transition-speed;
+    }
+    &:hover svg {
+        fill: $color-red !important;
+    }
+    &:hover svg path {
+        fill: $color-red !important;
+    }
+    &.current svg {
+        fill: $color-red !important;
+    }
+    &.current svg path {
+        fill: $color-red !important;
+    }
+    @include tablets {
+        padding: 15px 10px;
+        &:hover {
+            &::before {
+                background: transparent;
+            }
+        }
+    }
+    @include laptop {
+        padding: 15px 8px;
+    }
+}
+
+.hero__links-permalink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero__links-icon {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    margin-bottom: 15px;
+    @include laptop {
+        // height: 65px;
+        margin-bottom: 15px;
+    }
+}
+
+// .hero__links-icon>img {
+//     height: 100%;
+// }
+.inner .hero__links-icon svg,
+.inner .hero__links-icon svg path {
+    fill: #fff;
+}
+
+.hero__links-desc {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $color-black;
+    transition: $transition-speed;
+    @include tablets {
+        font-size: 14px;
+    }
+}
+
+.inner .hero__links-desc {
+    color: #fff;
+}
+
+.current .hero__links-desc {
+    color: $color-red !important;
+}
+
+.target {
+    width: 0px;
+    height: 3px;
+    background: $color-red;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(-100%);
+    display: none;
+    transition: all 0.5s ease-in-out;
+    @include desktop {
+        display: block
+    }
+}

@@ -1,0 +1,180 @@
+.news {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    @include tablets {
+        padding: 0;
+    }
+    &__img-wrap {
+        // height: 55vw;
+        height: 250px;
+        display: block;
+        position: relative;
+        @include big-mobile {
+            height: 350px;
+        }
+        @include tablets {
+            width: 340px;
+            height: 250px;
+            flex-shrink: 0;
+            margin-right: 25px;
+        }
+        @include laptop {
+            width: 495px;
+            height: 320px;
+            margin-right: 30px;
+        }
+        @include desktop {
+            width: 605px;
+            height: 340px;
+            margin-right: 30px;
+        }
+        & img {
+            height: 100%;
+            max-height: 100%;
+            width: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+    &__date {
+        position: absolute;
+        right: 0;
+        background: $color-light-grey;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 17px 25px;
+        top: 35px;
+    }
+    &__desc-wrap {
+        text-decoration: none;
+        text-align: left;
+    }
+    &__title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 28px;
+        color: $color-red;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        @include tablets {
+            margin-top: 0;
+            font-size: 24px;
+            line-height: 28px;
+            text-transform: uppercase;
+        }
+        @include laptop {
+            width: 60%;
+            font-size: 28px;
+            line-height: 36px;
+            margin-bottom: 20px;
+        }
+    }
+    &__desc {
+        margin-bottom: 20px;
+    }
+    &__item {
+        @include tablets {
+            display: flex;
+        }
+    }
+    &__list {
+        @include list-destroy;
+        margin-top: 15px;
+    }
+}
+
+.news__navigation {
+    z-index: 100;
+    & .button__red {
+        @include laptop {
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+    }
+    padding: 0 10px;
+    .swiper-button-prev {
+        left: 0;
+        top: 180px;
+        @include big-mobile {
+            top: 220px;
+        }
+    }
+    .swiper-button-next {
+        right: 0;
+        top: 180px;
+        @include big-mobile {
+            top: 220px;
+        }
+    }
+    @include tablets {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 385px;
+        width: 100%;
+        padding-right: 25px;
+        box-sizing: border-box;
+    }
+    @include laptop {
+        padding-left: 555px;
+        padding-right: 65px;
+    }
+    @include desktop {
+        padding-right: 0;
+        margin: 0 auto;
+        padding: 0 50px;
+        padding-left: 685px;
+        max-width: 1350px;
+        justify-content: flex-start;
+        left: 50%;
+        transform: translateX(-50%);
+        // margin: 0 auto;
+    }
+    &-btn {
+        // margin-left: auto;
+        display: flex;
+    }
+    & .swiper-button-prev {
+        @include tablets {
+            width: 60px;
+            height: 50px;
+            background: $color-light-grey;
+            margin-right: 15px;
+            &::after {
+                font-size: 18px;
+            }
+        }
+        @include desktop {
+            margin-left: 30px;
+        }
+        &:hover::after {
+            color: $color-red;
+        }
+    }
+    & .swiper-button-next {
+        @include tablets {
+            width: 60px;
+            height: 50px;
+            background: $color-light-grey;
+            &::after {
+                font-size: 18px;
+            }
+        }
+        &:hover::after {
+            color: $color-red;
+        }
+    }
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: $color-red;
+    height: 100%;
+}

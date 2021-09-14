@@ -1,0 +1,23 @@
+.company {
+    background: $color-light-grey;
+    padding: 35px 0;
+    text-align: center;
+    @include tablets {
+        padding: 40px 0;
+    }
+    @include tablets {
+        padding: 40px 0 65px;
+    }
+    & h2 {
+        margin-bottom: 15px;
+        @include tablets {
+            margin-bottom: 25px;
+        }
+        @include laptop {
+            margin-bottom: 30px;
+        }
+    }
+    & p:not(:last-child) {
+        padding-bottom: 20px;
+    }
+}

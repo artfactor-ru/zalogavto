@@ -1,0 +1,449 @@
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        // min-width: 385px;
+        font-family: $font-main;
+        @include p-style;
+        color: $color-black;
+        overflow-x: hidden;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        border: none;
+    }
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+        transition: $transition-speed;
+        &:hover {
+            color: $color-red;
+        }
+    }
+    
+    // a:hover {
+    //     opacity: 0.5;
+    // }
+    .container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 20px;
+        position: relative;
+        @include tablets {
+            padding: 0px 25px;
+        }
+        @include laptop {
+            padding: 0px 35px;
+        }
+        @include desktop {
+            margin: 0 auto;
+            padding: 0 50px;
+            max-width: 1350px;
+        }
+    }
+    
+    h2 {
+        @include h2-style;
+    }
+    
+    h3 {
+        font-weight: normal;
+        text-align: left
+    }
+    
+    p {
+        @include p-style;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        @include tablets {
+            position: static;
+            left: 0;
+            right: auto;
+            top: 0;
+            margin-top: 0;
+        }
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        color: $color-black;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled {
+        opacity: 1;
+    }
+    
+    .swiper-button-next.swiper-button-disabled::after,
+    .swiper-button-prev.swiper-button-disabled::after {
+        opacity: 0.5;
+    }
+    
+    input {
+        @include input-destroy;
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        font: inherit;
+        font-size: 16px;
+        @include laptop {
+            padding: 12px;
+            padding-left: 20px;
+        }
+    }
+    
+    textarea {
+        @include input-destroy;
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        font: inherit;
+        font-size: 16px;
+        @include laptop {
+            padding: 12px;
+            padding-left: 20px;
+        }
+    }
+    
+    button {
+        @include btn-destroy;
+        text-transform: uppercase;
+    }
+    
+    input[type=range],
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    
+    input[type=range],
+    .range__input-fill {
+        border-radius: 10px;
+        height: 18px;
+    }
+    
+    .range__input {
+        position: relative;
+        display: block;
+    }
+    
+    .range__input-fill {
+        display: block;
+    }
+    
+    .range__input-fill {
+        position: absolute;
+        left: 0;
+    }
+    
+    .range__input-fill {
+        background-color: $color-red;
+        pointer-events: none;
+        top: 0;
+    }
+    
+    input[type=range] {
+        background-color: $color-light-grey;
+        display: block;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    input[type=range]:focus {
+        outline: transparent;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        background-color: $color-black;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        transition: background 0.1s linear;
+        width: 20px;
+        height: 18px;
+        z-index: 10;
+        box-shadow: -407px 0 0 400px $color-red;
+    }
+    
+    input[type=range]::-moz-range-thumb {
+        background-color: $color-black;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        transform: translateZ(1px);
+        transition: background-color 0.1s linear;
+        width: 20px;
+        height: 18px;
+        z-index: 10;
+    }
+    
+    input[type=range]::-moz-focus-outer {
+        border: 0;
+    }
+    
+    .inner {
+        margin-top: 55px;
+        @include big-mobile {
+            margin-top: 60px;
+        }
+        @include tablets {
+            margin-top: 66px;
+        }
+        @include laptop {
+            margin-top: 75px;
+        }
+        @include desktop {
+            margin-top: 140px;
+        }
+        & h1 {
+            @include h2-style;
+            margin-top: 30px;
+        }
+    }
+    
+    .subtitle-red {
+        margin: 0;
+        padding: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 23px;
+        /* or 128% */
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-red;
+        @include tablets {
+            font-size: 24px;
+            line-height: 24px;
+        }
+        @include laptop {
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+    
+    .desc-block {
+        padding: 35px 0;
+        // text-align: center;
+        position: relative;
+        @include tablets {
+            padding: 40px 0;
+        }
+        @include laptop {
+            padding: 40px 0 65px;
+        }
+        @include desktop {
+            padding: 65px 0 100px;
+        }
+        & p {
+            @include desktop {
+                width: 90%;
+            }
+            text-align: left;
+        }
+        & p:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        & h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            @include laptop {
+                margin-bottom: 25px;
+            }
+            @include desktop {
+                margin-bottom: 40px;
+            }
+        }
+        & h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            @include laptop {
+                margin-bottom: 30px;
+            }
+            @include desktop {
+                margin-bottom: 40px;
+            }
+        }
+        &__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            & img {
+                display: none;
+                @include laptop {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    height: 100%;
+                    min-height: 320px;
+                }
+            }
+            .desc-block__text {
+                border-left: 4px solid $color-red;
+            }
+            & p {
+                padding-left: 20px;
+                box-sizing: border-box;
+                @include tablets {
+                    width: 80%;
+                    // border-left: 4px solid $color-red;
+                    padding-left: 20px;
+                }
+                @include laptop {
+                    width: 50%;
+                }
+            }
+        }
+        & ul {
+            text-align: left;
+        }
+    }
+    
+    .desc-block__simple {
+        &>p {
+            padding-left: 0;
+        }
+    }
+    
+    .desc-block--wide {
+        & p {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .desc-block--grey {
+        background: $color-light-grey;
+    }
+    
+    .swiper-container--pag-nav {
+        padding-bottom: 70px;
+    }
+    
+    .swiper-container--pag-nav .swiper-button-next,
+    .swiper-container--pag-nav .swiper-button-prev {
+        bottom: 10px;
+        top: auto;
+        width: auto;
+        height: auto;
+        position: absolute;
+    }
+    
+    .swiper-container--pag-nav .swiper-button-next {
+        right: 15%;
+        left: auto;
+        @include tablets {
+            right: 20%;
+        }
+    }
+    
+    .swiper-container--pag-nav .swiper-button-prev {
+        left: 15%;
+        @include tablets {
+            left: 20%;
+        }
+    }
+    
+    .swiper-container--pag-nav .swiper-button-next:after,
+    .swiper-container--pag-nav .swiper-button-prev:after {
+        content: "";
+        width: 25px;
+        height: 25px;
+        background-image: url(../img/arrow-next.svg);
+        background-size: 25px 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .swiper-container--pag-nav .swiper-button-prev:after {
+        transform: rotate(180deg);
+    }
+    
+    .swiper-container--pag-nav .swiper-pagination {
+        bottom: 0;
+    }
+    
+    .swiper-container--pag-nav .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        background: $color-black;
+        opacity: 1;
+    }
+    
+    .swiper-container--pag-nav .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+        transform: scale(0.5);
+    }
+    
+    .block-image {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        @include tablets {
+            margin-top: 40px;
+        }
+        @include laptop {
+            margin-top: 60px;
+        }
+        & img {
+            order: 1;
+            border-radius: 15px;
+            @include tablets {
+                width: 45%;
+                margin-left: 5%;
+                order: 2;
+                object-fit: cover;
+            }
+        }
+        &__text {
+            order: 2;
+            margin-top: 20px;
+            @include tablets {
+                order: 1;
+            }
+        }
+        @include tablets {
+            flex-direction: row;
+        }
+    }
+    
+    .wpcf7-not-valid-tip {
+        text-align: left;
+        font-size: 12px;
+        color: #fff;
+        width: 100% !important;
+        line-height: 16px;
+    }
+    
+    .wpcf7 form .wpcf7-response-output {
+        margin-left: 0;
+    }
+    
+    h3 {
+        @include h3-style;
+    }
+    
+    h4 {
+        @include h4-style;
+    }
+    
+    h5 {
+        @include h5-style;
+    }
+    
+    h6 {
+        @include h6-style;
+    }

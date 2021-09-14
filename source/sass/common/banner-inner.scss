@@ -1,0 +1,124 @@
+.banner-inner {
+    padding-top: 25px;
+    padding-bottom: 35px;
+    background-size: cover;
+    background-position: center;
+    @include tablets {
+        padding-top: 30px;
+        padding-bottom: 70px;
+    }
+    &__title {
+        @include h1-style;
+        margin-top: 30px;
+        width: 100%;
+        @include tablets {
+            width: 100%;
+            & br {
+                display: none
+            }
+        }
+        @include laptop {
+            & br {
+                display: block;
+            }
+            width: 85%;
+        }
+        @include desktop {
+            width: 65%;
+            // & br {
+            //     display: none
+            // }
+        }
+    }
+    &__list {
+        @include list-destroy;
+        margin-top: 35px;
+        width: 65%;
+        @include tablets {
+            margin-top: 45px;
+            display: flex;
+            width: 100%;
+            text-align: center;
+            justify-content: space-between;
+        }
+        @include laptop {
+            width: 85%;
+        }
+        @include desktop {
+            width: 65%;
+        }
+        & li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            @include tablets {
+                flex-direction: column;
+                width: 25%;
+                margin-bottom: 55px;
+            }
+            @include laptop {
+                flex-direction: row;
+                text-align: left;
+            }
+            @include desktop {
+                width: 30%;
+                margin-bottom: 70px;
+            }
+        }
+    }
+    &__icon {
+        margin-right: 10px;
+        @include laptop {
+            margin-right: 15px;
+        }
+    }
+    & .button__red {
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        z-index: 2;
+        @include tablets {
+            display: inline-block;
+            padding-left: 65px;
+            padding-right: 65px;
+        }
+        @include laptop {
+            padding: 18px;
+            padding-left: 75px;
+            padding-right: 75px;
+        }
+    }
+}
+
+.banner__object {
+    display: none;
+    @include desktop {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 328px;
+            height: 328px;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            left: 50%;
+            border-radius: 50%;
+            transition: all 1s ease-in-out;
+            background-color: $color-red;
+        }
+        & img {
+            position: relative;
+            z-index: 5;
+        }
+    }
+}
+
+.banner__object.anitrigger::before {
+    transform: translate(-50%, -50%) scale(1);
+}

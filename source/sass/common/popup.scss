@@ -1,0 +1,93 @@
+.form-popup {
+    padding: 40px 4%;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 645px;
+    border-radius: 15px;
+    background: $color-black;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.8);
+}
+
+.form-popup form {
+    text-align: center;
+}
+
+.form-popup__title {
+    @include h3-style;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-popup__desc {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-popup {
+    & input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    & textarea {
+        width: 100%;
+        font: inherit;
+        margin-bottom: 20px;
+        max-height: 130px;
+    }
+    & span {
+        margin-bottom: 20px;
+        display: block;
+        & input {
+            margin-bottom: 0;
+        }
+        & textarea {
+            margin-bottom: 0;
+        }
+    }
+    & .button__red {
+        margin: 0 auto;
+        width: auto;
+    }
+    .order-bottom__licenses {
+        margin-top: 12px;
+    }
+}
+
+.modal {
+    text-align: center;
+    width: 590px;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: $color-black;
+    box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    & h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        @include laptop {
+            font-size: 32px;
+            line-height: 36px;
+        }
+        @include desktop {
+            font-size: 32px;
+            line-height: 36px;
+        }
+    }
+    & p {
+        font-size: 20px;
+        line-height: 25px;
+        @include laptop {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+}
+
+.wpcf7 .ajax-loader {
+    display: none !important;
+}

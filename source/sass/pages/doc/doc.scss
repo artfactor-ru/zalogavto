@@ -1,0 +1,51 @@
+.doc {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    @include tablets {
+        margin-top: 30px;
+    }
+    @include desktop {
+        margin-top: 40px;
+    }
+    & .request {
+        text-transform: uppercase;
+        color: #303030;
+        font-weight: bold;
+    }
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.swiper-container--certificate {
+    // height: 200px;
+    // max-width: 375px;
+    margin: 0 auto;
+    margin-top: 40px;
+    flex-shrink: 0;
+    @include tablets {
+        height: 318px;
+        width: 604px;
+    }
+    @include desktop {
+        margin-top: 0;
+        margin-left: 45px;
+    }
+    & .swiper-slide::before {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 23px;
+        bottom: 20px;
+        right: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/zoom.svg);
+    }
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
