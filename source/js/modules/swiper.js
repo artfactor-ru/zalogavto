@@ -76,6 +76,7 @@ let swiperCertificate;
 if (document.querySelector('.swiper-container--certificate')) {
     swiperCertificate = new Swiper('.swiper-container--certificate', {
         slidesPerView: 3,
+        centeredSlides: true,
         spaceBetween: 10,
         slidesPerGroup: 1,
         speed: 1500,
